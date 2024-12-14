@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Dosis", sans-serif;
+}
+body{
+    background-image: url("../images/toby-otti-1nnHtfYn18s-unsplash.jpg");
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* ============header============== */
+.container {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    /* Removed duplicate box-shadow and combined for a stronger effect */
+    box-shadow: 5px 5px 30px rgba(148, 137, 137, 0.2),
+                0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.container .header {
+    display: flex;
+    font-size: 30px;
+    font-weight: 900;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#reset-game {
+    color: whitesmoke;
+    background: linear-gradient(45deg, violet, gray);
+    padding: 8px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#reset-game:hover {
+    transform: scale(1.05);
+}
+.info {
+    color: violet;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 10px 20px;
+}
+
+/* ==============selection and start============== */
+.select-icons, .win, .lose {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+}
+#start-btn, #select-type {
+    font-weight: 900;
+    font-size: 30px;
+    color: whitesmoke;
+    background-color: violet;
+    padding: 8px 50px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+#start-btn {
+    animation: floatUpDown 1.3s ease-in-out infinite;
+
+}
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+select:hover, button:hover {
+    color: black;
+}
+
+
+.hide{
+    display: none;
+}
+
+/* =============game board============ */
+#game-board {
+    display: grid;
+    /* 4 ccolumns with equal width */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+    margin: 20px;
+}
+
+.icon {
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.icon::after {
+    content: "♔";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(45deg, violet, gray);
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+    transform: rotateY(180deg);
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+/* ========================================= */
+/* Mobile Devices (320px - 480px) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin: 10px;
+        width: 95%;
+    }
+
+    .container .header {
+        font-size: 20px;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 10px;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .info {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    #start-btn, #select-type {
+        font-size: 20px;
+        padding: 8px 30px;
+    }
+    #reset-game {
+        font-size: 15px;
+        padding: 6px 12px;
+    }
+}
+
+/* Tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 10px;
+        margin: 10px;
+        width: 80%;
+    }
+
+    .container .header {
+        font-size: 20px;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .icon {
+        font-size: 1.8rem;
+        padding: 18px;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Playwrite+AU+QLD+Guides&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Memorize</title>
+</head>
+<body>
+    <!-- win layer -->
+    <div class="win">
+        <h1>Amazing, 🎉 YOU WIN 🎉</h1>
+    </div>
+    <!-- win layer -->
+    <div class="lose">
+        <h1>opssssssss, Game Over</h1>
+    </div>
+    <!-- overlay selection layer -->
+    <div class="select-icons">
+        <select id="select-type">
+            <option value="">-select icons-</option>
+            <option value="fruits">fruits</option>
+            <option value="emojis">emojis</option>
+            <option value="crystals">crystals</option>
+        </select>
+        <button id="start-btn" onclick="startGame()">Start</button>
+    </div>
+
+    <!-- game content -->
+    <div class="container">
+        <div class="header">
+            <h1>Memorize</h1>
+            <div>
+                <button id="reset-game" onclick="resetGame()">End Game</button>
+            </div>
+        </div>
+        <div class="info">
+            <p class="lives"></p>
+            <p class="timer"></p>
+        </div>
+        <div id="game-board">
+            <!-- from JS -->
+        </div> 
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
