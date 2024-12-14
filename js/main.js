@@ -8,12 +8,20 @@ const lives = document.querySelector(".lives");
 const timer = document.querySelector(".timer");
 
 // Sounds with error handling
+// const sounds = {
+//     match: new Audio('../sounds/match.wav'),
+//     mismatch: new Audio('../sounds/mismatch.wav'),
+//     win: new Audio('../sounds/win.wav'),
+//     lose: new Audio('../sounds/lose.wav')
+// };
+
 const sounds = {
-    match: new Audio('../sounds/match.wav'),
-    mismatch: new Audio('../sounds/mismatch.wav'),
-    win: new Audio('../sounds/win.wav'),
-    lose: new Audio('../sounds/lose.wav')
+    match: document.getElementById("match"),
+    mismatch: document.getElementById("mismatch"),
+    win: document.getElementById("win"),
+    lose: document.getElementById("lose")
 };
+
 
 Object.values(sounds).forEach(sound => {
     sound.addEventListener('error', () => console.log('Sound loading failed'));
